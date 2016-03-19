@@ -1,0 +1,8 @@
+docker run -d swarm join --addr=$(docker-machine ip agent3):2376 token://f65b403762bef3f189f097322c7e5bca
+export DOCKER_HOST=$(docker-machine ip manager):3376
+
+# docker run --rm swarm list token://f65b403762bef3f189f097322c7e5bca
+
+# docker run -d -p 3376:3376 -t -v /var/lib/boot2docker:/certs:ro swarm manage -H 0.0.0.0:3376 --tlsverify --tlscacert=/certs/ca.pem --tlscert=/certs/server.pem --tlskey=/certs/server-key.pem token://f65b403762bef3f189f097322c7e5bca
+# docker run -d swarm join --addr=$(docker-machine ip agent1):2376 token://f65b403762bef3f189f097322c7e5bca
+# docker run -d swarm join --addr=$(docker-machine ip agent2):2376 token://f65b403762bef3f189f097322c7e5bca
