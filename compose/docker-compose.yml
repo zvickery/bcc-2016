@@ -1,0 +1,8 @@
+sorting:
+  image: ubuntu:14.04
+  environment:
+    - FILE_NAME
+  volumes:
+    - ./data:/opt
+  working_dir: /opt
+  command: sort -n ${FILE_NAME}
